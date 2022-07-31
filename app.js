@@ -7,6 +7,25 @@ const app = Vue.createApp({
         return {
             submissions: submissions // From seed.js file & without a $-decklaration!
         }
+    },
+    methods: {
+        //Arrow functions do not work, because they alway grip the parent component.
+        // upvote: () =>{
+        //     console.log(this);
+        // },
+
+        /**Usual function notation
+         * upvote: function () {}*/
+
+        upvote() {
+            // console.log(infoText);
+            // console.log(event);
+            this.submissions[0].votes++;
+        },
+        logConsole(text) {
+            console.log(text);
+        }
+
     }
 
 });
